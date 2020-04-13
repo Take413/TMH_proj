@@ -1,0 +1,25 @@
+{% extends 'home/base.html' %}
+
+{% load staticfiles %}
+
+{% block title_block %}
+    Profile
+{% endblock %}
+
+{% block body_block %}
+<h1> Profile </h1>
+<div class="container">
+    <h1>Profile</h1>
+    <p>Username: {{ user }}</p>
+    <p>First name: {{ user.first_name }}</p>
+    <p>Last name: {{ user.last_name }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Description: {{ user.description }}</p>
+    <p>Phone: {{ user.phone }}</p>
+    <p>City: {{ user.city }}</p>
+    {% if user.picture %}
+    <img src="{% media 'profile_images/default-user.png' alt='Picture of default user' /%}">
+    {% endif %}
+</div>
+
+{% endblock %}

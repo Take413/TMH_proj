@@ -1,0 +1,12 @@
+{% extends 'home/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %} 
+Successful login
+{% endblock %}
+
+{% block body_block %}  
+	<p> You have logged successfully.</p>
+	<a href="{% url 'home:homepage' %}"> Return to homepage </a>
+
+{% endblock %}

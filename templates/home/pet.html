@@ -1,0 +1,24 @@
+{% extends 'home/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    {{ product.name }}
+{% endblock %}
+
+{% block body_block %}
+ 
+
+    <h1>{{ pet.name }}</h1>
+	<h1>{{ pet.description }}</h1>
+    {% if pets %}
+    <ul>
+        {% for pet in products %}
+		 <li><a href="/home/{{ category.slug }}/{{ subcategory.slug }}/{{pet.slug}}">{{ pet.name }}</a></li>
+        <li><a><img src="{{pet.image1.url}}"></a>{{pet.image1}}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <strong>This pet can not be adopted now</strong>
+    {% endif %}
+  
+{% endblock %}

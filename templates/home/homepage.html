@@ -1,0 +1,35 @@
+{% extends 'home/base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+	Home
+{% endblock %}
+
+
+
+{% block body_block %} 
+
+{% endblock %}
+
+
+{% block sidebar_block %}            
+<div>
+{% if categories %}
+            <ul>
+            {% for category, subcategories in categories.items %}
+                <h2><li><a href="/home/{{ category.slug }}/">{{ category.name }}</a></li></h2>
+                {% if subcategories %}
+                    <ul>
+                        {% for subcategory in subcategories %}
+                            <li><a href="/home/{{ category.slug }}/{{ subcategory.slug }}">{{ subcategory.name}}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <strong>There are no subcategories yet</strong>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no categories yet</strong>
+        {% endif %}
+<div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'home/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %} 
+    Login 
+{% endblock %}
+
+{% block body_block %} 
+<h1>Login to Take Me Home</h1> 
+<form id="login_form" method="post" action="{% url 'home:user_login' %}"> 
+	{% csrf_token %} 
+	Username: <input type="text" name="username" value="" /> <br /> 
+	Password: <input type="password" name="password" value="" /> <br /> 
+	<input type="submit" value="submit" /> <br />
+	
+	
+
+</form>
+<p>
+    Not registered?
+    <a href="{% url 'home:register' %}">Register here!</a>
+</p>
+
+{% endblock %}
